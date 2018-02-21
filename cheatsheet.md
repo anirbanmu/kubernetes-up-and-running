@@ -90,3 +90,20 @@
 
 ## Chapter 6 (Labels & annotations)
 ### Labels
+- Show all labels: `--show-labels`
+- Show one label: `-L <label-name>`
+
+#### Setting
+- `kubectl run alpaca-prod --image=gcr.io/kuar-demo/kuard-amd64:1 --replicas=2 --labels="ver=1,app=alpaca,env=prod"`
+
+#### Remove
+- `kubectl label deployments alpaca-test "canary-"`
+
+#### Selectors
+- Single: `--selector="ver=2"`
+- Multiple (logical AND): `--selector="ver=2,app=bandicoot"`
+- One of the values: `--selector="app in (alpaca,bandicoot)"`
+- Existence: `--selector="canary"`
+- Supports `=`, `!=`, `in`, `notin`, `keyname`, `!keyname`.
+
+### Annotations
