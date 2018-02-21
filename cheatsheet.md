@@ -71,20 +71,20 @@
 ### Listing
 `kubectl get pods`
 
-## Description
+### Description
 `kubectl describe pods kuard`
 
-## Port forward
+### Port forward
 `kubectl port-forward kuard 8080:8080`
 
-## Get logs
+### Get logs
 `kubectl logs <pod-name> [-f]`
 
-## Execute in container
+### Execute in container
 - `kubectl exec <pod-name> date`
 - Interactive: `kubectl exec -it <pod-name> ash`
 
-## Copy files to/from container
+### Copy files to/from container
 - From: `kubectl cp <pod-name>:/captures/capture3.txt ./capture3.txt`
 - To: `kubectl cp $HOME/config.txt <pod-name>:/config.txt`
 
