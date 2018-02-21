@@ -57,3 +57,36 @@
 ### Help
 - `kubectl help`
 - `kubectl help <command-name>`
+
+
+## Chapter 5 (Pods)
+### Creation
+- Imperative: `kubectl run kuard --image=gcr.io/kuar-demo/kuard-amd64:1`
+- From manifest: `kubectl apply -f kuard-pod.yaml`
+
+### Deletion
+- `kubectl delete deployments/kuard`
+- `kubectl delete -f kuard-pod.yaml`
+
+### Listing
+`kubectl get pods`
+
+## Description
+`kubectl describe pods kuard`
+
+## Port forward
+`kubectl port-forward kuard 8080:8080`
+
+## Get logs
+`kubectl logs <pod-name> [-f]`
+
+## Execute in container
+- `kubectl exec <pod-name> date`
+- Interactive: `kubectl exec -it <pod-name> ash`
+
+## Copy files to/from container
+- From: `kubectl cp <pod-name>:/captures/capture3.txt ./capture3.txt`
+- To: `kubectl cp $HOME/config.txt <pod-name>:/config.txt`
+
+## Chapter 6 (Labels & annotations)
+### Labels
